@@ -1,0 +1,62 @@
+<!DOCTYPE HTML> <!--indicates to the browser what version of HTML is used to make this webpage-->
+
+<HTML lang = "en"> <!--the language set for the webpage is English-->
+
+	<head> <!--stores title and metadata for the document-->
+	
+		<meta charset = "utf-8"> <!--represents any character with Unicode-->
+		<title> Video Player </title> <!--'Video Player' will appear in the tab when webpage opens-->
+		<script src="scripts/videoScript.js"></script> <!--calls the external javaScript in 'scripts' directory called videoScript-->
+		 
+	</head> <!--head closed-->
+
+	<body> <!--where the body of the content will go-->
+	
+		<header> <!--introduction tag to show the title-->
+		
+			<h1>Date: December 2018</h1> <!--the title contains my full name, student ID number and the current date-->
+			
+		</header> <!--header closed-->
+		
+		<section id="videoContainer"> <!--the section is where the video and its controls are-->
+		
+			<video
+			
+				width="640" height="360" 
+				poster="images/poster.jpg">
+				<source src="video/mp4/mmu.mp4">
+				<source src="video/webm/mmu.webm">
+				<!--<source src="video/webm/mmu.ogg">--> 
+				
+			</video>
+			
+			<div id="videoControls">
+			
+				<button type="button" id="playPause"> &#9658; </button> <!--the type is a button with the button name called playPause: camelCase & will be displayed as ">": a right-pointing pointer-->
+				<button type="button" id="muteUnmute"> Mute </button> <!--the type is a button with the button name called playPause: camelCase & will be displayed as ">": a right-pointing pointer-->
+				<input type="text" readonly id="currentTimeField" size="4" value="00:00"/> <!--text box that does not allow user input that displays current time field of video. initialized value of 00:00-->
+				<input type="text" readonly id="durationField" size="4"/>
+				<input type="range" id="seekBar" min=0 max=100 step=1 value=0>
+				<input type="range" id="volBar" min=0 max=10 step=1 value=5>
+				<label id="volumeLabel" for="volBar"> 5 </label>
+				
+				<select id="playbackSpeedList">
+					<option value="0.5"> 0.5x </option>
+					<option value="0.75"> 0.75x </option>
+					<option selected="selected" value="1"> 1x </option>
+					<option value="1.25"> 1.25x </option>
+					<option value="1.5"> 1.5x </option>
+					<option value="1.75"> 1.75x </option>
+					<option value="2"> 2x </option>
+				</select>
+				
+				<button type="button" id="forwardStep"> 10 &#8680; </button> <!--the type is a button with the button name called forwardStep: camelCase & will be displayed as 10 with right arrow-->
+				<button type="button" id="backStep"> 30 &#8678; </button> <!--the type is a button with the button name called backStep: camelCase & will be displayed as 30 with left arrow-->	
+			
+			</div> <!--container videoControls is closed-->
+			
+		</section> <!--section videoContainer closed-->
+
+	</body> <!--main content closes when body tag closes-->
+	
+</html> <!--html document ends, no detail after this closing tag will be in the webpage/flag an error-->
